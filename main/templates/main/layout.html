@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+</head>
+<body>
+    <aside>
+        <img src="{% static 'main/img/it-frontier.svg' %}" alt="Logo">
+        <span class="logo">ItNews</span>
+        <h3>Navigatsiya</h3>
+        <ul>
+            <a href="{% url 'home' %}"> <li> <i class="fas fa-home"></i> Home </li></a>
+            <a href="{% url 'about' %}"> <li> <i class="fas fa-address-card"></i> About us  </li></a>
+            <a href="{% url 'news_home' %}"> <li> <i class="fas fa-address-card"></i> News  </li></a>
+            <a href=""> <li> <i class="fas fa-paper-plane"></i> Contact  </li></a>
+            <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Add news </button></li></a>
+        </ul>
+    </aside>
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+</body>
+</html>
